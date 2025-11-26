@@ -1,0 +1,31 @@
+body { font-family:'Segoe UI',sans-serif; background:#0a0a0a; color:white; margin:0; transition:0.3s; }
+body.light { background:#f2f2f2; color:black; }
+
+header { background:#ff1f1f; padding:20px; display:flex; align-items:center; justify-content:space-between; gap:15px; color:white; }
+header .logo { width:50px; }
+#toggleTheme { background:none; border:none; color:white; font-size:20px; cursor:pointer; }
+
+.card { background:#111; border-radius:12px; padding:20px; margin:20px auto; max-width:400px; box-shadow:0 4px 20px rgba(255,0,0,0.3); transition:0.3s; }
+body.light .card { background:white; color:black; box-shadow:0 4px 20px rgba(0,0,0,0.1); }
+
+input, select, button { width:100%; padding:12px; margin-top:10px; font-size:16px; border-radius:8px; border:1px solid #ccc; }
+button { background:#ff1f1f; color:white; font-weight:bold; cursor:pointer; transition:0.2s; }
+button:hover { opacity:0.9; }
+
+#login-screen { display:flex; justify-content:center; align-items:center; height:100vh; }
+.login-card { background:#222; padding:25px; border-radius:12px; box-shadow:0 4px 20px rgba(255,0,0,0.5); text-align:center; transition:0.3s; }
+body.light .login-card { background:white; color:black; box-shadow:0 4px 20px rgba(0,0,0,0.2); }
+
+#captchaContainer { display:flex; justify-content:center; align-items:center; gap:10px; margin-top:15px; }
+
+/* Animations */
+#robuxAnimation, #ffAnimation, #confetti { position:fixed; pointer-events:none; top:0; left:0; width:100%; height:100%; overflow:hidden; z-index:999; }
+
+/* Discord button */
+.discordLink { background:#7289DA; color:white; font-weight:bold; border:none; border-radius:8px; padding:12px; cursor:pointer; width:100%; transition:0.2s; font-size:16px; }
+.discordLink:hover { opacity:0.9; }
+
+/* Profile cards */
+#profileCards { display:flex; gap:10px; margin-top:10px; }
+.profileCard { flex:1; padding:10px; border-radius:8px; text-align:center; background:#222; }
+body.light .profileCard { background:#ddd; color:black; }
