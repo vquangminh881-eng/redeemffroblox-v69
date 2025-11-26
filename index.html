@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ultimate Redeem PWA v14 Hyper Supreme Infinity</title>
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#000000">
+</head>
+<body>
+
+<div id="login-screen">
+    <div class="login-card">
+        <img src="icons/icon-192.png" class="logo">
+        <h2>Ultimate Redeem v14 Hyper Supreme Infinity</h2>
+        <input id="loginName" placeholder="Tên người dùng">
+        <button onclick="login()">Tiếp tục</button>
+    </div>
+</div>
+
+<div id="app" style="display:none;">
+    <header>
+        <img src="icons/icon-192.png" class="logo">
+        <h1>Ultimate Redeem v14</h1>
+        <div id="balance">Robux: 0 | Kim Cương FF: 0</div>
+        <button id="toggleTheme" onclick="toggleTheme()">🌙/☀️</button>
+    </header>
+
+    <main>
+        <!-- Profile Premium / VIP -->
+        <section class="card">
+            <h3>Profile</h3>
+            <label><input type="checkbox" id="premiumToggle"> Premium Roblox</label>
+            <label><input type="checkbox" id="vipToggle"> VIP Free Fire</label>
+            <div id="profileCards"></div>
+        </section>
+
+        <!-- Roblox Redeem -->
+        <section class="card">
+            <h3>Redeem Roblox</h3>
+            <input id="robloxCode" placeholder="XXXX-XXXX-XXXX-XXXX" maxlength="19">
+            <button onclick="startCaptcha('roblox')">Redeem Roblox</button>
+            <p id="robloxError"></p>
+        </section>
+
+        <!-- CAPTCHA Drag & Drop -->
+        <section class="card" id="captchaBox" style="display:none;">
+            <h3>Xác minh CAPTCHA</h3>
+            <p>Kéo biểu tượng màu xanh vào ô đúng để tiếp tục</p>
+            <div id="captchaContainer"></div>
+            <p id="captchaMessage"></p>
+        </section>
+
+        <!-- Free Fire Redeem -->
+        <section class="card">
+            <h3>Redeem Free Fire</h3>
+            <input id="ffID" placeholder="Nhập ID 9 số">
+            <input id="ffCode" placeholder="XXXX-XXXX-XXXX-XXXX" maxlength="19">
+            <button onclick="redeemFF()">Redeem FF</button>
+            <p id="ffMessage"></p>
+        </section>
+
+        <!-- Card Link -->
+        <section class="card">
+            <h3>Liên kết thẻ</h3>
+            <select id="cardType">
+                <option>Visa</option>
+                <option>American Express</option>
+            </select>
+            <input id="cardNumber" placeholder="Số thẻ">
+            <button onclick="linkCard()">Liên kết</button>
+            <p id="cardResult"></p>
+        </section>
+
+        <!-- Lịch sử giao dịch -->
+        <section class="card">
+            <h3>Lịch sử giao dịch</h3>
+            <label>Filter theo ngày:</label>
+            <input type="date" id="filterDate" onchange="filterHistory()">
+            <button onclick="exportHistory()">Export CSV/JSON</button>
+            <div id="historyList"></div>
+        </section>
+
+        <!-- Admin Discord -->
+        <section class="card">
+            <h3>Admin's Discord</h3>
+            <button class="discordLink" onclick="openDiscord()">Join my Discord now</button>
+        </section>
+    </main>
+
+    <!-- Animations -->
+    <div id="robuxAnimation"></div>
+    <div id="ffAnimation"></div>
+    <div id="confetti"></div>
+
+    <!-- Audio -->
+    <audio id="redeemSound" src="redeem.mp3"></audio>
+    <audio id="popupSound" src="popup.mp3"></audio>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
